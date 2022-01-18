@@ -15,9 +15,12 @@ import javax.persistence.Table;
 //一覧表示するデータを取得するためのJPQL
 @NamedQueries({
     @NamedQuery(
-            name = "getAllMessages",
+            name = "getAllTasks",
             query = "SELECT m FROM Task AS m ORDER BY m.id DESC"
-            )
+            ),
+    @NamedQuery(
+            name ="getTasksCount",
+            query = "SELECT COUNT(m) FROM Task AS m")
 })
 @Table(name = "tasks")
 public class Task {
